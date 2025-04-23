@@ -1,6 +1,6 @@
-# Say-What?
 
-# SupportOps: Say What? 🧯
+
+# Say What? 🧯
 
 Welcome to **Say What?**, a hybrid app that blends *real operational metrics* with *playful storytelling* to highlight how support roles quietly hold your company together.
 
