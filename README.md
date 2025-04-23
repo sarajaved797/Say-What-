@@ -5,7 +5,7 @@
 Welcome to **Say What?**, a hybrid app that blends *real operational metrics* with *playful storytelling* to highlight how support roles quietly hold your company together.
 
 
-![Say What? teaser] https://github.com/sarajaved797/Say-What-app/blob/main/Say%20What_%20Consequences%20of%20Overlooked%20Roles.png
+[Say What? teaser] https://github.com/sarajaved797/Say-What-app/blob/main/Say%20What_%20Consequences%20of%20Overlooked%20Roles.png
 
 
 ## 🔍 Why This Exists
