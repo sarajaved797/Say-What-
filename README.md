@@ -30,9 +30,19 @@ This project:
 
 - Story mode: A narrative simulation of a CEO meltdown
 
-## 🚧 Disclaimer
+## How to Use:
 
-This is an exploratory concept. I'm early in my data journey, and this project is part of learning to connect business logic, storytelling, and tech in meaningful ways.
+1. Input the tasks and roles of support staff.
+
+2. Let the app calculate the financial impact.
+
+3. View insights on how these tasks contribute to the company’s bottom line.
+
+
+## Contributing:
+
+Feel free to submit pull requests or suggestions as we build this app to better showcase the value of every team member.
+
 
 ## 🧰 Stack
 
@@ -40,7 +50,18 @@ This is an exploratory concept. I'm early in my data journey, and this project i
 - Streamlit
 - Humor
 
+## LinkedIn:
+
+[Connect with me on LinkedIn](https://www.linkedin.com/in/sara-javed-7b9a43226/)
+
 ## 🤝 Credits
 
 Created by someone who’s been there, doing the invisible work and off course our good old trusted friend ChatGPT.
+
+## 🚧 Disclaimer
+
+This is an exploratory concept. I'm early in my data journey, and this project is part of learning to connect business logic, storytelling, and tech in meaningful ways.
+
+
+
 
