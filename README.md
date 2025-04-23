@@ -22,11 +22,11 @@ This project:
 
 - Streamlit dashboard simulating core support metrics:
 
-  - Payroll compliance risk
+ - Payroll compliance risk
 
-  - Expense backlog → employee satisfaction impact
+- Expense backlog → employee satisfaction impact
 
-  - 1099/Census → penalty estimations
+- 1099/Census → penalty estimations
 
 - Story mode: A narrative simulation of a CEO meltdown
 
