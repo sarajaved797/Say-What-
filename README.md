@@ -4,6 +4,11 @@
 
 Welcome to **Say What?**, a hybrid app that blends *real operational metrics* with *playful storytelling* to highlight how support roles quietly hold your company together.
 
+
+![Say What? teaser](https://github.com/sarajaved797/say-what/blob/main/say-what-cover.png?raw=true)
+
+
+
 ## 🔍 Why This Exists
 
 Payroll delayed? Reimbursements bottlenecked? 1099s forgotten?  
