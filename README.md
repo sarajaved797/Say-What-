@@ -41,8 +41,7 @@ This project:
 
 ## Contributing:
 
-Feel free to submit pull requests or suggestions as we build this app to better showcase the value of every team member.
-
+Pull requests and feedback are welcome as this MVP evolves into a sharper, more data-driven advocacy tool.
 
 ## 🧰 Stack
 
@@ -60,8 +59,7 @@ Created by someone who’s been there, doing the invisible work and off course o
 
 ## 🚧 Disclaimer
 
-This is an exploratory concept. I'm early in my data journey, and this project is part of learning to connect business logic, storytelling, and tech in meaningful ways.
-
+This is an exploratory concept built as part of my data journey. It's a sandbox for learning how to connect business logic, storytelling, and technology in meaningful ways.
 
 
 
