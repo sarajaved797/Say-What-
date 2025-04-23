@@ -8,7 +8,6 @@ Welcome to **Say What?**, a hybrid app that blends *real operational metrics* wi
 ![Say What? teaser] https://github.com/sarajaved797/Say-What-app/blob/main/Say%20What_%20Consequences%20of%20Overlooked%20Roles.png
 
 
-
 ## 🔍 Why This Exists
 
 Payroll delayed? Reimbursements bottlenecked? 1099s forgotten?  
