@@ -1,6 +1,11 @@
 import streamlit as st
 import random
 
+#Streamlit App starts here
+st.set_page_config(page_title="Say What? SupportOps", layout="wide")
+st.title("Say What? — The App 🚀- SupportOps Simulation")
+
+
 # Say What? - SupportOps MVP Skeleton
 # ==================================
 # This is the basic Streamlit layout for the Reality Check engine (left) and Chaos Theater (right).
@@ -101,10 +106,6 @@ story = get_narrative_scene(scene_key)
 
     
 
-
-# Streamlit App starts here
-st.set_page_config(page_title="Say What? SupportOps", layout="wide")
-st.title("Say What? — The App 🚀- SupportOps Simulation")
 
 # Choose the scene
 scene_key = 1  # Static for now; can later make it dynamic
