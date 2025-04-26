@@ -126,11 +126,26 @@ CEO_LINES = [
     "Can we just pay with Bitcoin and call it a day?"
 ]
 
-def get_narrative_scene(scene_id):
-    return {
-        "ceo": random.choice(CEO_LINES),
-        "uncle_sam": "You forgot your 1099s? I didn’t."
-    }
+#def get_narrative_scene(scene_id):
+    #return {
+        #"ceo": random.choice(CEO_LINES),
+        #"uncle_sam": "You forgot your 1099s? I didn’t."
+   # }
+
+
+scene_key = 1  
+story = get_narrative_scene(scene_key)
+
+st.subheader("🧑‍💼 CEO says:")
+st.write(story["ceo"])
+
+st.subheader("🦅 Uncle Sam says:")
+st.write(story["uncle_sam"])
+
+
+
+
+
 
 # “CEO Soundboard” Button"
 if st.sidebar.button("CEO Meltdown 🚨"):
