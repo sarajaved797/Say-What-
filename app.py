@@ -27,10 +27,76 @@ def get_narrative_scene(scene_id):
         }
     }
     return scenes.get(scene_id, {"ceo": "...", "uncle_sam": "..."})
+    
 
-# Streamlit App
+# Streamlit App starts here
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
-st.title("Say What? — SupportOps Simulation")
+st.title("Say What? — The App 🚀- SupportOps Simulation")
+
+# Choose the scene
+scene_key = 1  # Static for now;  can later make it dynamic
+story = get_narrative_scene(scene_key)
+
+#cooler layout/display
+
+st.subheader("🧑‍💼 CEO says:")
+st.info(story["ceo"])  # CEO's dialogue in blue
+
+st.subheader("🦅 Uncle Sam says:")
+st.warning(story["uncle_sam"])  # Uncle Sam's dialogue in orange
+
+
+#Auto-Emoji-bubble power
+
+# Select the scene
+scene_key = 1
+story = get_narrative_scene(scene_key)
+
+# Auto emoji selection based on scene_id
+def get_reactions(scene_id):
+    reaction_map = {
+        1: {"ceo": "😵‍💫", "uncle_sam": "🧐"},
+        2: {"ceo": "😤", "uncle_sam": "🧾"},
+        3: {"ceo": "😂", "uncle_sam": "🤨"},
+        # Add more scenes + reactions here as you expand
+    }
+    return reaction_map.get(scene_id, {"ceo": "🤔", "uncle_sam": "🦅"})
+
+# Get correct reactions
+reactions = get_reactions(scene_key)
+
+# Create two columns for layout
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown(f"""
+    <div style="border-radius: 10px; background-color: #f4e1d2; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
+        <h4 style="color: #d94e45;">🧑‍💼 CEO says {reactions['ceo']}</h4>
+        <p>{story["ceo"]}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown(f"""
+    <div style="border-radius: 10px; background-color: #c8e6e8; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
+        <h4 style="color: #3f91b5;">🦅 Uncle Sam says {reactions['uncle_sam']}</h4>
+        <p>{story["uncle_sam"]}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #Add the Sidebar Dropdown
