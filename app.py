@@ -32,6 +32,41 @@ def get_narrative_scene(scene_id):
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
 st.title("Say What? — SupportOps Simulation")
 
+
+#Add the Sidebar Dropdown
+st.sidebar.title("Disaster Controls 💥")
+
+chaos_choice = st.sidebar.selectbox(
+    "Choose Your Chaos:",
+    [
+        "Let Chaos Decide",
+        "Missing 1099s",
+        "Late Expense Reports",
+        "Unfiled Property Tax",
+        "Unleash Total Mayhem"
+    ]
+)
+
+# Control the Scenes
+
+if chaos_choice == "Let Chaos Decide":
+    scene = random.choice(["missing_1099s", "late_expense_reports", "unfiled_property_tax"])
+    st.subheader("🎲 Random Disaster Incoming!")
+    st.write(get_narrative_scene(scene))
+
+elif chaos_choice == "Unleash Total Mayhem":
+    st.subheader("☄️ TOTAL MAYHEM MODE ACTIVATED!")
+    for scene in ["missing_1099s", "late_expense_reports", "unfiled_property_tax"]:
+        st.write(get_narrative_scene(scene))
+
+else:
+    scene_key = chaos_choice.lower().replace(" ", "_")
+    st.subheader(f"⚡ Disaster: {chaos_choice}")
+    st.write(get_narrative_scene(scene_key))
+
+
+
+
 # Sidebar: Input Module
 st.sidebar.header("Reality Check Inputs 🛠️")
 action = st.sidebar.selectbox(
