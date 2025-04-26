@@ -16,15 +16,30 @@ def simulate_support_action(action, department):
         "Compliance Cliff": "🟠 ORANGE"
     }
 
-def get_narrative_scene(scene_id):
-    # Return dynamic narrative scenes based on scene_id
+    
+    def get_narrative_scene(scene_id):
     scenes = {
-        1: {
-            "ceo": "What in the world just happened...",
-            "uncle_sam": "You forgot your 1099s? I didn’t."
+        "missing_1099s": {
+            "ceo": "What in the world just happened... We've got missing 1099s!",
+            "uncle_sam": "You forgot your 1099s? I didn’t. 🧾"
+        },
+        "late_expense_reports": {
+            "ceo": "Did you seriously let the expense reports slip?!",
+            "uncle_sam": "Expenses are late? I'm going to need an explanation."
+        },
+        "unfiled_property_tax": {
+            "ceo": "Unfiled property tax?! We're in trouble!",
+            "uncle_sam": "The IRS is gonna have a field day. 😬"
         }
     }
-    return scenes.get(scene_id, {})
+    return scenes.get(scene_id, {"ceo": "No chaos here yet...", "uncle_sam": "Waiting for chaos!"})
+
+# Set the scene dynamically based on the selected chaos choice
+scene_key = chaos_choice.lower().replace(" ", "_")
+story = get_narrative_scene(scene_key)
+
+    
+
 
 
 # Streamlit App starts here
@@ -72,19 +87,34 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown(f"""
-    <div style="border-radius: 10px; background-color: #f4e1d2; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
-        <h4 style="color: #d94e45;">🧑‍💼 CEO says {reactions['ceo']}</h4>
-        <p style="color: black;">{story["ceo"]}</p>
+    <div style="border-radius: 10px; background-color: #ff7043; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
+        <h4 style="color: #fff;">🧑‍💼 CEO says {reactions['ceo']}</h4>
+        <p style="color: #fff;">{story["ceo"]}</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown(f"""
-    <div style="border-radius: 10px; background-color: #c8e6e8; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
-        <h4 style="color: #3f91b5;">🦅 Uncle Sam says {reactions['uncle_sam']}</h4>
-        <p style="color: black;">{story["uncle_sam"]}</p>
+    <div style="border-radius: 10px; background-color: #42a5f5; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
+        <h4 style="color: #fff;">🦅 Uncle Sam says {reactions['uncle_sam']}</h4>
+        <p style="color: #fff;">{story["uncle_sam"]}</p>
     </div>
     """, unsafe_allow_html=True)
+
+#Add Fun Themes Based on Chaos Mode:
+if chaos_choice == "Unleash Total Mayhem":
+    st.markdown("<style>body {background-color: #FF5733;}</style>", unsafe_allow_html=True)
+elif chaos_choice == "Missing 1099s":
+    st.markdown("<style>body {background-color: #ffcc00;}</style>", unsafe_allow_html=True)
+
+
+
+#Add CEO Sound Effects or Randomized Reactions:
+
+if st.sidebar.button("CEO Meltdown 🚨"):
+    ceo_rant = random.choice(CEO_LINES)
+    st.sidebar.error(f"💥 CEO Rant: “{ceo_rant}”")
+
 
 
 # Add the Sidebar Dropdown
