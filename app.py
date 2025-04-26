@@ -34,12 +34,72 @@ def get_narrative_scene(scene_id):
     }
     return scenes.get(scene_id, {"ceo": "No chaos here yet...", "uncle_sam": "Waiting for chaos!"})
 
+import streamlit as st
+import random
+
+# Sample narratives for the CEO and Uncle Sam
+def get_narrative_scene(scene_id):
+    scenes = {
+        "missing_1099s": {
+            "ceo": "What in the world just happened... We've got missing 1099s!",
+            "uncle_sam": "You forgot your 1099s? I didn’t. 🧾"
+        },
+        "late_expense_reports": {
+            "ceo": "Did you seriously let the expense reports slip?!",
+            "uncle_sam": "Expenses are late? I'm going to need an explanation."
+        },
+        "unfiled_property_tax": {
+            "ceo": "Unfiled property tax?! We're in trouble!",
+            "uncle_sam": "The IRS is gonna have a field day. 😬"
+        }
+    }
+    return scenes.get(scene_id, {"ceo": "No chaos here yet...", "uncle_sam": "Waiting for chaos!"})
+
+# Available chaos choices
+chaos_options = ["Missing 1099s", "Late Expense Reports", "Unfiled Property Tax"]
+
+# Sidebar input for chaos choice
+chaos_choice = st.sidebar.selectbox("Choose a Chaos Scenario", chaos_options)
+
+# Get the narrative based on the selected scenario
+story = get_narrative_scene(chaos_choice.lower().replace(" ", "_"))
+
+# Display the chaos narrative
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown(f"""
+    <div style="border-radius: 10px; background-color: #ff7043; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
+        <h4 style="color: #fff;">🧑‍💼 CEO says:</h4>
+        <p style="color: #fff;">{story["ceo"]}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown(f"""
+    <div style="border-radius: 10px; background-color: #42a5f5; padding: 10px; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);">
+        <h4 style="color: #fff;">🦅 Uncle Sam says:</h4>
+        <p style="color: #fff;">{story["uncle_sam"]}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Button to trigger a CEO rant
+if st.sidebar.button("CEO Meltdown 🚨"):
+    ceo_rant = random.choice([
+        "This is the worst thing that's ever happened!",
+        "Can we please get some organized chaos around here?!",
+        "I'm about to lose it over these 1099s!"
+    ])
+    st.sidebar.error(f"💥 CEO Rant: “{ceo_rant}”")
+
+
+
+
+
 # Set the scene dynamically based on the selected chaos choice
 scene_key = chaos_choice.lower().replace(" ", "_")
 story = get_narrative_scene(scene_key)
 
     
-
 
 
 # Streamlit App starts here
