@@ -17,7 +17,7 @@ def simulate_support_action(action, department):
     }
 
     
-    def get_narrative_scene(scene_id):
+def get_narrative_scene(scene_id):
     scenes = {
         "missing_1099s": {
             "ceo": "What in the world just happened... We've got missing 1099s!",
