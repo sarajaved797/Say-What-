@@ -1,8 +1,4 @@
 
-!pip install streamlit
-
-
-
 import streamlit as st
 
 # Say What? - SupportOps MVP Skeleton
