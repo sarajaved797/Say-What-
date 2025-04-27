@@ -1,8 +1,3 @@
-```python
-import streamlit as st
-import random
-import pandas as pd
-import time
 
 # ─── Page config & Peace Meter ──────────────────────────────────────────────────
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
