@@ -1,5 +1,4 @@
 streamlit>=1.20.0
 
-import streamlit as st
-import random
-import pandas as pd
+pandas
+numpy
