@@ -1,3 +1,4 @@
+import streamlit as st
 
 # ─── Page config & Peace Meter ──────────────────────────────────────────────────
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
