@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 # ─── Page config & Peace Meter ──────────────────────────────────────────────────
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
 if 'peace' not in st.session_state:
@@ -103,6 +104,8 @@ st.markdown(
     "- TODO: Replace placeholder images with final art",
     unsafe_allow_html=True
 )
-```
+
+
+
 
 
