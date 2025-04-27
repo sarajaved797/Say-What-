@@ -1,4 +1,5 @@
-import streamlit as st, random
+import streamlit as st
+
 
 # ─── Page config & Peace Meter ──────────────────────────────────────────────────
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
@@ -20,6 +21,13 @@ UNCLE_SAM_LINES = [
     "You filed money, not forms—big difference.",
     "Paperwork or penalties—you choose.",
     "Forms late? Fines early."
+]
+
+HERO_LINES = [
+    "This is just a part of the process; handle it with equanimity.",
+    "Actions are my duty; outcomes are not in my hands.",
+    "Do your duty, without attachment to results.",
+    "Equanimity in all situations brings peace."
 ]
 
 # ─── Sidebar: Reality Check & Peace ─────────────────────────────────────────────
@@ -60,6 +68,10 @@ with col2:
     if state == 'in_trouble':
         st.markdown("🎶 A flute appears... soft notes guide you.")
         st.markdown("👣 Footprints light the way.")
+        # Hero responds with Gita wisdom
+        st.write("**Hero pulls out a completed file of overdue returns.**")
+        st.write("Hero places the file on the table, calmly stares at the CEO and says:")
+        st.write("**Hero:** 'This is just a part of the process; handle it with equanimity.'")
         # Cliffhanger: CEO fires the hero
         st.error("💥 YOU ARE FIRED!!!!!!!!!!!! and ...")
         # Exit scene commented out for free version
@@ -68,6 +80,7 @@ with col2:
         st.markdown("🦚 A peacock feather drifts down in celebration.")
     else:
         st.write("The hero stands ready...")
+    
     if st.button("Resolve Action ✅", key="res1"):
         st.session_state.hero_state = 'celebrate'
         st.session_state.peace = min(100, st.session_state.peace + 40)
@@ -81,4 +94,3 @@ st.markdown(
     "- TODO: Replace placeholders with final art",
     unsafe_allow_html=True
 )
-
