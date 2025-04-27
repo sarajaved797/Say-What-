@@ -34,7 +34,7 @@ if simulate_button:
 if st.session_state.peace < 30:
     st.balloons()
     st.success(
-      "🧘 Gita Moment: “When your mind is unstirred by sorrow and fear, you dwell in perfect peace.”"
+      "🧘 Gita Moment: “When your mind is unstirred by sorrow and fear, you dwell in perfect peace.”")
 
 
 
