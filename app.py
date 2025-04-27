@@ -2,6 +2,13 @@ import streamlit as st, random
 
 # --- Reality Check (left) ---
 st.sidebar.header("Reality Check 💰")
+actions = [
+    "Run Payroll",
+    "File 1099s",
+    "Process Expense Reimbursements",
+    "Vendor Payment",
+    "Process Census Forms"
+]
 action = st.sidebar.selectbox("Action", actions)
 if st.sidebar.button("Simulate"):
     penalty = random.randint(0,100000)
