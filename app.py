@@ -4,10 +4,8 @@ st.set_page_config(page_title="Say What? SupportOps", layout="wide")
 if 'peace' not in st.session_state:
     st.session_state.peace = 100
 
-# ─── Sidebar: Peace Meter & Interventions ────────────────────────────────────────
+# ─── Sidebar: Peace Meter & Intervention ─────────────────────────────────────────
 st.sidebar.metric("🕊️ Peace Meter", f"{st.session_state.peace} / 100")
-if st.sidebar.button("All-Hands Meditation 🧘‍♀️"):
-    st.session_state.peace = min(100, st.session_state.peace + 30)
 if st.sidebar.button("Auto-Approve Routine Filings ✔️"):
     st.session_state.peace = min(100, st.session_state.peace + 20)
     st.sidebar.success("Routine filings fast-tracked—peace restored!")
@@ -105,4 +103,5 @@ st.markdown(
     unsafe_allow_html=True
 )
 ```
+
 
