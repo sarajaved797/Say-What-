@@ -3,6 +3,43 @@ import random
 
 # Streamlit App starts here
 st.set_page_config(page_title="Say What? SupportOps", layout="wide")
+# 1) Peace Meter init
+if 'peace' not in st.session_state:
+    st.session_state.peace = 100
+
+# Sidebar: Peace Meter display
+st.sidebar.metric("🕊️ Peace Meter", f"{st.session_state.peace} / 100")
+
+# Sidebar: interventions
+if st.sidebar.button("All-Hands Meditation 🧘"):
+    st.session_state.peace = min(100, st.session_state.peace + 30)
+if st.sidebar.button("Auto-Approve Filings ✔️"):
+    st.session_state.peace = min(100, st.session_state.peace + 20)
+    st.sidebar.success("Routine filings fast-tracked—peace restored!")
+
+# Main title
+st.title("Say What? — SupportOps Simulation")
+
+# Simulate Action
+action = st.sidebar.selectbox("Action", ["Run Payroll", "File 1099s"])
+simulate_button = st.sidebar.button("Simulate Action 🔄")
+
+if simulate_button:
+    # … your existing simulate_support_action logic
+    drop = random.randint(10, 25)
+    st.session_state.peace = max(0, st.session_state.peace - drop)
+    st.subheader(f"After {action}, Peace dropped by {drop} points.")
+
+# 5) Gita Moment if peace is low
+if st.session_state.peace < 30:
+    st.balloons()
+    st.success(
+      "🧘 Gita Moment: “When your mind is unstirred by sorrow and fear, you dwell in perfect peace.”"
+
+
+
+
+
 st.title("Say What? — The App 🚀 - SupportOps Simulation")
 
 # Placeholder functions for simulation logic and narrative scenes
